@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
@@ -45,4 +46,53 @@ nav a {
   color: white;
   text-decoration: none;
   border-radius: 8px;
+=======
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  background: #f6f1ea;
+  color: #1f2933;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.narrow {
+  max-width: 650px;
+}
+
+.site-header {
+  background: #fffdf9;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1f2933;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #5f7f73;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+>>>>>>> e7b92afcbce76f2e14beb183a45d2c60c70b6eac
 }
