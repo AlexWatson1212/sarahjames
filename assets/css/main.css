@@ -1,98 +1,80 @@
-<<<<<<< HEAD
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 0;
-  background: #f6f1ea;
-  color: #1f2933;
-}
+---
+layout: default
+title: Sarah James Therapy
+---
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Sarah James Therapy</p>
 
-.narrow {
-  max-width: 650px;
-}
+    <h1>Therapy for anxiety, overwhelm, and feeling not quite like yourself.</h1>
 
-.site-header {
-  background: #fffdf9;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+    <p class="subtext">
+      A calm, supportive space to slow down, make sense of what you are carrying,
+      and begin to feel more like yourself again.
+    </p>
 
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    <a href="/contact/" class="btn-primary">Get in touch</a>
+  </div>
+</section>
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #1f2933;
-}
+<section class="intro">
+  <div class="container narrow">
+    <h2>A gentle place to begin</h2>
 
-.hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
+    <p>
+      Reaching out for therapy can feel like a big step, especially when life already feels heavy.
+      My aim is to offer a warm, steady space where you do not have to have everything worked out before you arrive.
+    </p>
+  </div>
+</section>
 
-.btn-primary {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: #5f7f73;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-=======
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  margin: 0;
-  background: #f6f1ea;
-  color: #1f2933;
-}
+<section class="support">
+  <div class="container narrow">
+    <h2>I may be able to help with</h2>
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+    <ul>
+      <li>Anxiety and constant overthinking</li>
+      <li>Feeling overwhelmed or emotionally exhausted</li>
+      <li>Low self-worth or harsh self-criticism</li>
+      <li>Life changes, loss, or feeling stuck</li>
+    </ul>
+  </div>
+</section>
 
-.narrow {
-  max-width: 650px;
-}
+<section class="approach">
+  <div class="container narrow">
+    <h2>How I work</h2>
 
-.site-header {
-  background: #fffdf9;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
+    <p>
+      My approach is warm, relational, and thoughtful. I work at a pace that feels manageable,
+      helping you explore what is going on beneath the surface without pressure or overwhelm.
+    </p>
 
-.site-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    <p>
+      Therapy is not about having the right words. It is about having a space where you can arrive honestly,
+      be met with care, and begin to understand yourself more clearly.
+    </p>
+  </div>
+</section>
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #1f2933;
-}
+<section class="fees">
+  <div class="container narrow">
+    <h2>Practical details</h2>
 
-.hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
+    <p>Sessions are 50 minutes and cost £55.</p>
+    <p>I offer online sessions and in-person sessions in Manchester.</p>
+  </div>
+</section>
 
-.btn-primary {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: #5f7f73;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
->>>>>>> e7b92afcbce76f2e14beb183a45d2c60c70b6eac
-}
+<section class="contact-cta">
+  <div class="container narrow">
+    <h2>If you would like to take the next step</h2>
+
+    <p>
+      You are welcome to get in touch for a first conversation and see whether working together feels right.
+    </p>
+
+    <a href="/contact/" class="btn-primary">Contact Sarah</a>
+  </div>
+</section>
