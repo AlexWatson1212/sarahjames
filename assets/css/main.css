@@ -21,8 +21,6 @@ body {
   line-height: 1.7;
 }
 
-/* Layout */
-
 .container {
   max-width: 1040px;
   margin: 0 auto;
@@ -33,8 +31,6 @@ body {
   max-width: 720px;
 }
 
-/* Header */
-
 .site-header {
   background: rgba(255, 253, 249, 0.92);
   border-bottom: 1px solid var(--border);
@@ -44,7 +40,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 24px;
 }
 
 .logo {
@@ -58,13 +54,12 @@ nav a {
   text-decoration: none;
   color: var(--text);
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: var(--accent);
 }
-
-/* Hero */
 
 .hero {
   background: linear-gradient(180deg, var(--bg-muted), var(--bg));
@@ -100,8 +95,6 @@ nav a:hover {
   font-size: 1rem;
 }
 
-/* Button */
-
 .btn-primary {
   display: inline-block;
   margin-top: 30px;
@@ -111,13 +104,13 @@ nav a:hover {
   text-decoration: none;
   border-radius: 999px;
   font-weight: 600;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
   background: var(--accent-dark);
 }
-
-/* Sections */
 
 section {
   padding: 90px 0;
@@ -130,14 +123,13 @@ section:nth-of-type(even) {
 h2 {
   font-family: Georgia, serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  margin-bottom: 20px;
+  line-height: 1.15;
+  margin: 0 0 20px;
 }
 
 p {
-  margin-bottom: 16px;
+  margin: 0 0 16px;
 }
-
-/* Support cards */
 
 .support-list {
   list-style: none;
@@ -153,8 +145,6 @@ p {
   border-radius: 14px;
 }
 
-/* Trust */
-
 .trust-note {
   margin-top: 28px;
   padding: 22px;
@@ -163,7 +153,39 @@ p {
   border-radius: 12px;
 }
 
-/* CTA */
+form {
+  margin-top: 28px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid rgba(95, 127, 115, 0.25);
+  border-color: var(--accent);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  font: inherit;
+}
 
 .contact-cta {
   text-align: center;
@@ -173,16 +195,37 @@ p {
   max-width: 700px;
 }
 
-/* Footer */
-
 .site-footer {
   border-top: 1px solid var(--border);
   background: var(--bg-soft);
 }
 
 .site-footer .container {
-  padding: 30px 0;
+  padding: 30px 24px;
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 18px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .hero {
+    padding: 80px 0 72px;
+  }
+
+  section {
+    padding: 68px 0;
+  }
 }
