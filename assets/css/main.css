@@ -85,51 +85,22 @@ main {
 .header-inner,
 .site-header .container {
   max-width: 1280px;
-  min-height: 88px;
+  min-height: 94px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Brand version */
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  line-height: 1.1;
-}
-
-.brand-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.brand-sub {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-top: 4px;
-}
-
-/* Fallback if your header still uses .logo */
-
 .logo {
-  display: inline-flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
-  letter-spacing: -0.02em;
-  background-image: none !important;
-  width: auto;
-  height: auto;
-  text-indent: 0;
-  overflow: visible;
+  display: inline-block;
+  width: 270px;
+  height: 76px;
+  background-image: url("/assets/images/sarah-james-logo.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 
 /* Navigation */
@@ -455,6 +426,12 @@ h2 {
     gap: 18px;
   }
 
+  .logo {
+    width: 250px;
+    height: 70px;
+    background-position: center;
+  }
+
   .main-nav,
   nav {
     flex-wrap: wrap;
@@ -492,13 +469,10 @@ h2 {
     padding: 0 22px;
   }
 
-  .brand {
-    align-items: center;
-  }
-
-  .brand-name,
   .logo {
-    font-size: 1.35rem;
+    width: 230px;
+    height: 64px;
+    background-position: center;
   }
 
   .main-nav,
@@ -556,4 +530,4 @@ h2 {
   .step {
     padding: 24px;
   }
-}
+}a
