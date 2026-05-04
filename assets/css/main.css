@@ -34,6 +34,10 @@ img {
   display: block;
 }
 
+main {
+  min-height: 70vh;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -46,6 +50,25 @@ img {
 
 .center {
   text-align: center;
+}
+
+/* Accessibility */
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 999;
+  background: var(--text);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 /* Header */
@@ -71,7 +94,7 @@ img {
   display: inline-block;
   width: 220px;
   height: 64px;
-  background-image: url("/assets/images/sarah-james-logo.png");
+  background-image: url("/assets/images/sarah-james-hero-wide.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
