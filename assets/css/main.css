@@ -44,33 +44,6 @@ main {
   padding: 0 32px;
 }
 
-.narrow {
-  max-width: 760px;
-}
-
-.center {
-  text-align: center;
-}
-
-/* Accessibility */
-
-.skip-link {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 999;
-  background: var(--text);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  transform: translateY(-160%);
-  transition: transform 0.2s ease;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
 /* Header */
 
 .site-header {
@@ -82,64 +55,65 @@ main {
   backdrop-filter: blur(10px);
 }
 
-.header-inner,
-.site-header .container {
+.header-inner {
   max-width: 1280px;
-  min-height: 94px;
+  min-height: 92px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* ✅ LOGO FIX */
+
 .logo {
-  display: inline-block;
-  width: 270px;
+  display: block;
+  width: 280px;
   height: 76px;
-  background-image: url("/assets/images/sarah-james-logo.png") !important;
+
+  /* IMPORTANT: relative path */
+  background-image: url("../images/sarah-james-logo.png");
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
+
   text-indent: -9999px;
   overflow: hidden;
+
+  flex-shrink: 0;
 }
 
 /* Navigation */
 
-.main-nav,
-nav {
+.main-nav {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.main-nav a,
-nav a {
+.main-nav a {
   text-decoration: none;
   color: var(--text);
   font-size: 0.95rem;
 }
 
-.main-nav a:hover,
-nav a:hover {
+.main-nav a:hover {
   color: var(--accent-dark);
 }
 
-.nav-cta,
-nav a:last-child {
+.nav-cta {
   background: var(--accent);
   color: white !important;
   padding: 11px 20px;
   border-radius: 999px;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
 }
 
-.nav-cta:hover,
-nav a:last-child:hover {
+.nav-cta:hover {
   background: var(--accent-dark);
-  color: white !important;
 }
 
 /* Hero */
@@ -151,7 +125,7 @@ nav a:last-child:hover {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.03fr) minmax(380px, 0.82fr);
+  grid-template-columns: 1fr 0.85fr;
   align-items: center;
   gap: 64px;
 }
@@ -160,116 +134,46 @@ nav a:last-child:hover {
   max-width: 680px;
 }
 
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--accent-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.hero h1,
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-}
-
 .hero h1 {
   margin: 0 0 24px;
-  font-size: clamp(3rem, 5vw, 5.6rem);
-  line-height: 1.03;
-  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  line-height: 1.05;
 }
 
 .subtext {
-  margin: 0;
-  max-width: 610px;
   color: var(--muted);
-  font-size: 1.24rem;
-  line-height: 1.65;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
   margin-top: 32px;
-}
-
-.btn-primary,
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 13px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-size: 0.84rem;
 }
 
 .btn-primary {
   background: var(--accent);
   color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
   background: var(--accent-dark);
 }
 
-.btn-secondary {
-  color: var(--text);
-  border: 1px solid var(--border);
-  background: transparent;
-}
-
-.btn-secondary:hover {
-  background: var(--accent-soft);
-}
-
-.trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
-  color: var(--muted);
-  font-size: 0.94rem;
-}
-
-.trust-row span {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 7px 13px;
-}
-
 /* Hero image */
 
-.hero-image-wrap {
-  position: relative;
-}
-
-.hero-image-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 22px -22px -22px 22px;
-  background: var(--accent-soft);
-  border-radius: 32px;
-}
-
 .hero-image {
-  position: relative;
   min-height: 560px;
   border-radius: 32px;
-  background-image: url("/assets/images/sarah-james-hero-wide.webp");
+
+  background-image: url("../images/sarah-james-hero-wide.webp");
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-position: center;
+
   box-shadow: var(--shadow);
 }
 
@@ -279,255 +183,35 @@ section {
   padding: 88px 0;
 }
 
-.intro {
-  background: var(--bg-muted);
-}
-
-.intro-grid,
-.how-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
-  align-items: start;
-}
-
 h2 {
-  margin: 0;
-  font-size: clamp(2.1rem, 3vw, 3.2rem);
-  line-height: 1.13;
-  color: #65705e;
-}
-
-.intro-copy p,
-.panel p,
-.cta p {
-  color: var(--muted);
-  margin: 0 0 18px;
-}
-
-.section-heading {
-  max-width: 680px;
-  margin-bottom: 34px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 12px 38px rgba(38, 56, 56, 0.05);
-}
-
-.card h3,
-.step h3 {
-  margin: 0 0 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
-  font-weight: 500;
-}
-
-.card p,
-.step p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.how {
-  background: var(--bg-soft);
-}
-
-.panel {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 38px;
-}
-
-.panel h2 {
-  margin-bottom: 22px;
-}
-
-.text-link {
-  color: var(--accent-dark);
-  font-weight: 700;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-}
-
-.steps {
-  display: grid;
-  gap: 18px;
-}
-
-.step {
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: 18px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 24px;
-}
-
-.step span {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.cta {
-  background: linear-gradient(180deg, #e5ebe3, #f6f1ea);
-}
-
-.cta h2 {
-  margin-bottom: 18px;
-}
-
-.cta .btn-primary {
-  margin-top: 16px;
-}
-
-/* Footer */
-
-.site-footer {
-  border-top: 1px solid var(--border);
-  background: var(--bg-soft);
-}
-
-.site-footer .container {
-  padding: 30px 24px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
+  font-family: Georgia, serif;
+  font-size: 2.4rem;
 }
 
 /* Responsive */
 
-@media (max-width: 940px) {
-  .header-inner,
-  .site-header .container {
-    min-height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+@media (max-width: 900px) {
+  .header-inner {
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
   }
 
-  .logo {
-    width: 250px;
-    height: 70px;
-    background-position: center;
-  }
-
-  .main-nav,
-  nav {
+  .main-nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 18px 26px;
   }
 
-  .hero {
-    padding: 54px 0 68px;
-  }
-
-  .hero-grid,
-  .intro-grid,
-  .how-grid {
+  .hero-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
   }
 
   .hero-image {
-    min-height: 460px;
-    background-position: center top;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  body {
-    font-size: 16px;
-  }
-
-  .container {
-    padding: 0 22px;
+    min-height: 420px;
   }
 
   .logo {
-    width: 230px;
+    width: 240px;
     height: 64px;
     background-position: center;
   }
-
-  .main-nav,
-  nav {
-    gap: 14px 18px;
-  }
-
-  .main-nav a,
-  nav a {
-    font-size: 0.92rem;
-  }
-
-  .nav-cta,
-  nav a:last-child {
-    padding: 10px 17px;
-  }
-
-  .hero h1 {
-    font-size: 2.65rem;
-  }
-
-  .subtext {
-    font-size: 1.08rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-  }
-
-  .trust-row {
-    display: grid;
-  }
-
-  .hero-image {
-    min-height: 380px;
-    border-radius: 24px;
-    background-position: center top;
-  }
-
-  .hero-image-wrap::before {
-    display: none;
-  }
-
-  section {
-    padding: 64px 0;
-  }
-
-  .card,
-  .panel,
-  .step {
-    padding: 24px;
-  }
-}a
+}
