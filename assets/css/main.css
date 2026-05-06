@@ -9,7 +9,8 @@
   --accent-dark: #5f6b5b;
   --accent-soft: #dfe5dc;
   --border: rgba(38, 56, 56, 0.12);
-  --shadow: 0 22px 60px rgba(38, 56, 56, 0.08);
+  --shadow: 0 24px 70px rgba(38, 56, 56, 0.09);
+  --shadow-soft: 0 14px 38px rgba(38, 56, 56, 0.055);
 }
 
 * {
@@ -28,6 +29,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.7;
   font-size: 17px;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -72,36 +74,69 @@ main {
 
 .header-inner {
   max-width: 1280px;
-  min-height: 96px;
+  min-height: 94px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo */
+
 .logo {
-  display: block;
-  width: 390px;
-  height: 76px;
-  background-image: url("../images/brand/sarah-james-therapy-primary.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-  text-indent: -9999px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
   flex-shrink: 0;
 }
+
+.logo-mark {
+  width: 62px;
+  height: 62px;
+  background-image: url("../images/brand/sarah-james-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.55rem;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: #111;
+}
+
+.logo-text::after {
+  content: "Therapy";
+  display: block;
+  margin-top: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.52em;
+  text-transform: uppercase;
+  color: #94a08f;
+}
+
+/* Navigation */
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 36px;
 }
 
 .main-nav a {
   text-decoration: none;
   color: var(--text);
-  font-size: 0.94rem;
-  font-weight: 500;
+  font-size: 0.93rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
@@ -111,73 +146,77 @@ main {
 .nav-cta {
   background: var(--accent);
   color: white !important;
-  padding: 12px 24px;
+  padding: 12px 25px;
   border-radius: 999px;
-  font-size: 0.78rem !important;
+  font-size: 0.76rem !important;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   font-weight: 800;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .nav-cta:hover {
   background: var(--accent-dark);
   color: white !important;
+  transform: translateY(-1px);
 }
 
 /* Hero */
 
 .hero {
-  background: var(--bg-soft);
-  padding: 72px 0 82px;
+  background:
+    radial-gradient(circle at 78% 38%, rgba(223, 229, 220, 0.65), transparent 25%),
+    var(--bg-soft);
+  padding: 72px 0 86px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.82fr);
+  grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.82fr);
   align-items: center;
-  gap: 64px;
+  gap: 72px;
 }
 
 .hero-copy {
-  max-width: 680px;
+  max-width: 690px;
 }
 
 .eyebrow {
   margin: 0 0 14px;
   color: var(--accent-dark);
   text-transform: uppercase;
-  letter-spacing: 0.11em;
-  font-size: 0.78rem;
-  font-weight: 700;
+  letter-spacing: 0.13em;
+  font-size: 0.76rem;
+  font-weight: 800;
 }
 
 .hero h1,
 h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
 }
 
 .hero h1 {
   margin: 0 0 24px;
-  font-size: clamp(3rem, 5vw, 5.6rem);
-  line-height: 1.03;
+  font-size: clamp(3.15rem, 5vw, 5.65rem);
+  line-height: 1.02;
   color: var(--text);
 }
 
 .subtext {
   margin: 0;
-  max-width: 610px;
+  max-width: 620px;
   color: var(--muted);
-  font-size: 1.24rem;
-  line-height: 1.65;
+  font-size: 1.22rem;
+  line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 34px;
 }
 
 .btn-primary,
@@ -189,10 +228,11 @@ h2 {
   padding: 13px 28px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary {
@@ -202,16 +242,19 @@ h2 {
 
 .btn-primary:hover {
   background: var(--accent-dark);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
   color: var(--text);
   border: 1px solid var(--border);
-  background: transparent;
+  background: rgba(255, 253, 249, 0.75);
 }
 
 .btn-secondary:hover {
   background: var(--accent-soft);
+  border-color: rgba(38, 56, 56, 0.18);
+  transform: translateY(-2px);
 }
 
 /* Trust links */
@@ -220,9 +263,9 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 30px;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.92rem;
 }
 
 .trust-row a,
@@ -230,7 +273,7 @@ h2 {
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: 999px;
-  padding: 7px 13px;
+  padding: 7px 14px;
   color: var(--muted);
   text-decoration: none;
 }
@@ -249,15 +292,15 @@ h2 {
 .hero-image-wrap::before {
   content: "";
   position: absolute;
-  inset: 22px -22px -22px 22px;
+  inset: 24px -24px -24px 24px;
   background: var(--accent-soft);
-  border-radius: 32px;
+  border-radius: 34px;
 }
 
 .hero-image {
   position: relative;
   min-height: 560px;
-  border-radius: 32px;
+  border-radius: 34px;
   background-image: url("../images/sarah-james-hero-wide.webp");
   background-size: cover;
   background-position: center center;
@@ -268,7 +311,7 @@ h2 {
 /* Sections */
 
 section {
-  padding: 88px 0;
+  padding: 92px 0;
 }
 
 .intro {
@@ -279,14 +322,14 @@ section {
 .how-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
+  gap: 68px;
   align-items: start;
 }
 
 h2 {
   margin: 0;
-  font-size: clamp(2.1rem, 3vw, 3.2rem);
-  line-height: 1.13;
+  font-size: clamp(2.15rem, 3vw, 3.25rem);
+  line-height: 1.12;
   color: #65705e;
 }
 
@@ -298,29 +341,30 @@ h2 {
 }
 
 .section-heading {
-  max-width: 680px;
-  margin-bottom: 34px;
+  max-width: 710px;
+  margin-bottom: 36px;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 .card {
   background: var(--bg-soft);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 12px 38px rgba(38, 56, 56, 0.05);
+  border-radius: 26px;
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
 }
 
 .card h3,
 .step h3 {
   margin: 0 0 10px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
+  font-size: 1.38rem;
+  line-height: 1.25;
   font-weight: 500;
 }
 
@@ -334,12 +378,12 @@ h2 {
 .step-link {
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .card-link:hover,
 .step-link:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow);
   border-color: rgba(38, 56, 56, 0.18);
 }
@@ -353,8 +397,8 @@ h2 {
 .panel {
   background: var(--bg-panel);
   border: 1px solid var(--border);
-  border-radius: 30px;
-  padding: 38px;
+  border-radius: 32px;
+  padding: 40px;
 }
 
 .panel h2 {
@@ -363,9 +407,9 @@ h2 {
 
 .text-link {
   color: var(--accent-dark);
-  font-weight: 700;
+  font-weight: 800;
   text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+  text-underline-offset: 5px;
 }
 
 .steps {
@@ -379,8 +423,8 @@ h2 {
   gap: 18px;
   background: white;
   border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 24px;
+  border-radius: 24px;
+  padding: 26px;
 }
 
 .step span {
@@ -392,8 +436,8 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 /* CTA */
@@ -440,9 +484,16 @@ h2 {
   }
 
   .logo {
-    width: 320px;
-    height: 66px;
-    background-position: center;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 2.2rem;
+  }
+
+  .logo-mark {
+    width: 54px;
+    height: 54px;
   }
 
   .main-nav {
@@ -452,14 +503,14 @@ h2 {
   }
 
   .hero {
-    padding: 54px 0 68px;
+    padding: 56px 0 70px;
   }
 
   .hero-grid,
   .intro-grid,
   .how-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 38px;
   }
 
   .hero-image {
@@ -486,9 +537,22 @@ h2 {
   }
 
   .logo {
-    width: 270px;
-    height: 58px;
-    background-position: center;
+    gap: 12px;
+  }
+
+  .logo-text {
+    font-size: 1.7rem;
+  }
+
+  .logo-text::after {
+    margin-top: 8px;
+    letter-spacing: 0.38em;
+    font-size: 0.68rem;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
   }
 
   .main-nav {
@@ -504,7 +568,7 @@ h2 {
   }
 
   .hero h1 {
-    font-size: 2.65rem;
+    font-size: 2.75rem;
   }
 
   .subtext {
@@ -535,12 +599,21 @@ h2 {
   }
 
   section {
-    padding: 64px 0;
+    padding: 66px 0;
   }
 
   .card,
   .panel,
   .step {
     padding: 24px;
+  }
+
+  .step {
+    grid-template-columns: 46px 1fr;
+  }
+
+  .step span {
+    width: 38px;
+    height: 38px;
   }
 }
