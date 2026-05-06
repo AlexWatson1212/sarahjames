@@ -1,77 +1,27 @@
-/* Footer */
+<footer class="site-footer">
+  <div class="container footer-inner">
 
-.site-footer {
-  border-top: 1px solid var(--border);
-  background: var(--bg-soft);
-}
+    <div>
+      <h3 class="footer-title">Sarah James Therapy</h3>
 
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1.2fr auto auto;
-  gap: 48px;
-  align-items: start;
-  padding: 54px 32px;
-}
+      <p class="footer-copy">
+        Calm, supportive therapy for adults who want to feel understood,
+        steadier, and more themselves.
+      </p>
+    </div>
 
-.footer-title {
-  margin: 0 0 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4rem;
-  color: var(--text);
-}
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#how-i-work">How I Work</a>
+      <a href="#fees">Fees</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-.footer-copy {
-  margin: 0;
-  max-width: 420px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
+    <div class="footer-meta">
+      <p>Online and in-person therapy</p>
+      <p>Adults 18+</p>
+      <p>© {{ site.time | date: "%Y" }} Sarah James Therapy</p>
+    </div>
 
-.footer-nav {
-  display: grid;
-  gap: 12px;
-}
-
-.footer-nav a {
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 0.94rem;
-  transition: color 0.2s ease;
-}
-
-.footer-nav a:hover {
-  color: var(--accent-dark);
-}
-
-.footer-meta {
-  text-align: right;
-}
-
-.footer-meta p {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-/* Tablet */
-
-@media (max-width: 940px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-  }
-
-  .footer-copy {
-    margin: 0 auto;
-  }
-
-  .footer-nav {
-    justify-content: center;
-  }
-
-  .footer-meta {
-    text-align: center;
-  }
-}
+  </div>
+</footer>
