@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: 104px;
 }
 
 body {
@@ -56,20 +56,7 @@ main {
 /* Accessibility */
 
 .skip-link {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 999;
-  background: var(--text);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  transform: translateY(-160%);
-  transition: transform 0.2s ease;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
+  display: none;
 }
 
 /* Header */
@@ -85,7 +72,7 @@ main {
 
 .header-inner {
   max-width: 1280px;
-  min-height: 94px;
+  min-height: 96px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,8 +80,8 @@ main {
 
 .logo {
   display: block;
-  width: 300px;
-  height: 80px;
+  width: 390px;
+  height: 76px;
   background-image: url("../images/brand/sarah-james-therapy-primary.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -107,13 +94,14 @@ main {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 34px;
 }
 
 .main-nav a {
   text-decoration: none;
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
+  font-weight: 500;
 }
 
 .main-nav a:hover {
@@ -123,12 +111,12 @@ main {
 .nav-cta {
   background: var(--accent);
   color: white !important;
-  padding: 11px 20px;
+  padding: 12px 24px;
   border-radius: 999px;
-  font-size: 0.8rem !important;
+  font-size: 0.78rem !important;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .nav-cta:hover {
@@ -342,8 +330,6 @@ h2 {
   color: var(--muted);
 }
 
-/* Clickable cards and steps */
-
 .card-link,
 .step-link {
   text-decoration: none;
@@ -454,8 +440,8 @@ h2 {
   }
 
   .logo {
-    width: 260px;
-    height: 70px;
+    width: 320px;
+    height: 66px;
     background-position: center;
   }
 
@@ -500,8 +486,8 @@ h2 {
   }
 
   .logo {
-    width: 230px;
-    height: 62px;
+    width: 270px;
+    height: 58px;
     background-position: center;
   }
 
