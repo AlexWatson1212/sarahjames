@@ -55,8 +55,6 @@ main {
   text-align: center;
 }
 
-/* Accessibility */
-
 .skip-link {
   display: none;
 }
@@ -83,44 +81,17 @@ main {
 /* Logo */
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo-mark {
-  width: 62px;
-  height: 62px;
-  background-image: url("../images/brand/sarah-james-icon.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  flex-shrink: 0;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.55rem;
-  line-height: 0.9;
-  letter-spacing: -0.045em;
-  color: #111;
-}
-
-.logo-text::after {
-  content: "Therapy";
+.logo img,
+.logo-image {
+  width: 245px;
+  height: auto;
   display: block;
-  margin-top: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.76rem;
-  font-weight: 500;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
-  color: #94a08f;
 }
 
 /* Navigation */
@@ -256,8 +227,6 @@ h2 {
   border-color: rgba(38, 56, 56, 0.18);
   transform: translateY(-2px);
 }
-
-/* Trust links */
 
 .trust-row {
   display: flex;
@@ -454,6 +423,16 @@ h2 {
   margin-top: 16px;
 }
 
+.email-note {
+  margin-top: 18px !important;
+  font-size: 0.95rem;
+}
+
+.email-note a {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
 /* Footer */
 
 .site-footer {
@@ -529,13 +508,9 @@ h2 {
     justify-content: center;
   }
 
-  .logo-text {
-    font-size: 2.2rem;
-  }
-
-  .logo-mark {
-    width: 54px;
-    height: 54px;
+  .logo img,
+  .logo-image {
+    width: 230px;
   }
 
   .main-nav {
@@ -607,28 +582,14 @@ h2 {
   }
 
   .header-inner {
-    padding-top: 14px;
-    padding-bottom: 14px;
-    gap: 14px;
+    padding-top: 18px;
+    padding-bottom: 16px;
+    gap: 16px;
   }
 
-  .logo {
-    gap: 12px;
-  }
-
-  .logo-text {
-    font-size: 1.7rem;
-  }
-
-  .logo-text::after {
-    margin-top: 8px;
-    letter-spacing: 0.38em;
-    font-size: 0.68rem;
-  }
-
-  .logo-mark {
-    width: 44px;
-    height: 44px;
+  .logo img,
+  .logo-image {
+    width: 225px;
   }
 
   .main-nav {
