@@ -1,9 +1,9 @@
 <header class="site-header">
   <div class="container header-inner">
 
-    <a href="/" class="logo" aria-label="Sarah James Therapy home">
+    <a href="#home" class="logo" aria-label="Sarah James Therapy home">
       <img
-        src="/assets/images/brand/sarah-james-therapy-primary.svg"
+        src="{{ '/assets/images/brand/sarah-james-therapy-primary.svg' | relative_url }}"
         alt="Sarah James Therapy"
         class="logo-image"
       >
@@ -21,9 +21,11 @@
     </label>
 
     <nav class="main-nav" aria-label="Primary navigation">
-      <a href="/about/">About</a>
-      <a href="/how-i-work/">How I Work</a>
-      <a href="/fees/">Fees</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+      <a href="#how-therapy-works">How Therapy Works</a>
+      <a href="#fees">Fees</a>
+      <a href="#contact" class="nav-contact">Contact</a>
 
       <a
         href="mailto:hello@sarahjames-therapy.co.uk?subject=Therapy%20enquiry"

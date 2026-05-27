@@ -82,6 +82,7 @@ h1,
 h2,
 .card h3,
 .step h3,
+.fee-card h3,
 .footer-title {
   font-family: var(--serif);
   font-weight: 500;
@@ -128,6 +129,7 @@ h2 {
 .cta p,
 .card p,
 .step p,
+.fee-card p,
 .footer-copy,
 .footer-meta p {
   color: var(--muted);
@@ -135,7 +137,8 @@ h2 {
 
 .intro-copy p,
 .panel p,
-.cta p {
+.cta p,
+.fee-card p {
   margin: 0 0 18px;
 }
 
@@ -206,9 +209,9 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(255, 253, 249, 0.9);
-  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  background: rgba(255, 253, 249, 0.92);
+  border-bottom: 1px solid rgba(38, 56, 56, 0.08);
   backdrop-filter: blur(18px);
 }
 
@@ -228,8 +231,9 @@ a {
 }
 
 .logo-image {
-  width: 240px;
+  width: 270px;
   height: auto;
+  display: block;
 }
 
 /* Menu */
@@ -282,19 +286,38 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 40px;
 }
 
 .main-nav a {
   color: var(--text);
-  font-size: 0.93rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
   color: var(--accent-dark);
+}
+
+.main-nav a:not(.nav-cta) {
+  position: relative;
+}
+
+.main-nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 1px;
+  background: var(--accent-dark);
+  transition: width 0.25s ease;
+}
+
+.main-nav a:not(.nav-cta):hover::after {
+  width: 100%;
 }
 
 .nav-cta {
@@ -393,7 +416,8 @@ a {
 }
 
 .intro-grid,
-.how-grid {
+.how-grid,
+.fees-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 68px;
@@ -485,6 +509,54 @@ a {
   color: white;
   font-size: 0.76rem;
   font-weight: 800;
+}
+
+/* Fees */
+
+.fees {
+  background: var(--bg);
+}
+
+.fee-card {
+  padding: 38px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.fee-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.55rem;
+  line-height: 1.25;
+}
+
+.fee-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 26px 0 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.fee-line span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.fee-line strong {
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.small-note {
+  margin-bottom: 0 !important;
+  font-size: 0.95rem;
 }
 
 /* CTA */
@@ -587,7 +659,8 @@ a {
 
   .hero-grid,
   .intro-grid,
-  .how-grid {
+  .how-grid,
+  .fees-grid {
     grid-template-columns: 1fr;
     gap: 38px;
   }
@@ -649,62 +722,63 @@ a {
   }
 
   .logo-image {
-    width: 190px;
+    width: 188px;
   }
 
   .menu-button {
+    position: relative;
+    z-index: 201;
     display: inline-flex;
     width: 42px;
     height: 42px;
   }
 
   .main-nav {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 14px;
-    right: 14px;
-    display: grid;
-    gap: 8px;
-    padding: 10px;
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    background: rgba(255, 253, 249, 0.97);
-    box-shadow: 0 18px 52px rgba(38, 56, 56, 0.12);
-    backdrop-filter: blur(18px);
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    padding: 92px 24px 36px;
+    background: var(--bg-soft);
     opacity: 0;
-    transform: translateY(-8px) scale(0.98);
+    transform: translateX(100%);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .main-nav a {
-    min-height: 48px;
+    width: 100%;
+    min-height: 58px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 16px;
-    border-radius: 16px;
-    background: transparent;
-    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1.22rem;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
   }
 
-  .main-nav a:not(.nav-cta) {
-    border-bottom: 1px solid rgba(38, 56, 56, 0.08);
-  }
-
-  .main-nav a::after {
-    content: "→";
-    color: var(--accent-dark);
-    font-weight: 700;
-    opacity: 0.45;
+  .main-nav a:not(.nav-cta)::after {
+    display: none;
   }
 
   .main-nav .nav-cta {
+    width: 100%;
+    max-width: 420px;
+    min-height: 58px;
     justify-content: center;
-    margin-top: 4px;
-    min-height: 50px;
+    margin: 36px auto 0;
+    border: 0;
+    border-radius: var(--pill);
     background: var(--accent);
     color: white !important;
+    font-size: 0.9rem !important;
   }
 
   .main-nav .nav-cta::after {
@@ -725,8 +799,12 @@ a {
 
   .menu-toggle:checked ~ .main-nav {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
     pointer-events: auto;
+  }
+
+  body:has(.menu-toggle:checked) {
+    overflow: hidden;
   }
 
   .hero {
@@ -796,13 +874,15 @@ a {
   }
 
   .intro-grid,
-  .how-grid {
+  .how-grid,
+  .fees-grid {
     gap: 26px;
   }
 
   .intro-copy p,
   .panel p,
-  .cta p {
+  .cta p,
+  .fee-card p {
     margin-bottom: 14px;
   }
 
@@ -876,6 +956,16 @@ a {
   .step-link:hover {
     box-shadow: none;
     transform: none;
+  }
+
+  .fee-card {
+    padding: 24px;
+  }
+
+  .fee-line {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .cta {
