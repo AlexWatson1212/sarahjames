@@ -98,8 +98,8 @@ h2 {
 .hero h1 {
   margin: 0 0 22px;
   color: var(--text);
-  font-size: clamp(3.45rem, 5.35vw, 6.15rem);
-  line-height: 1.01;
+  font-size: clamp(3.35rem, 4.6vw, 5.35rem);
+  line-height: 1.02;
 }
 
 h2 {
@@ -411,7 +411,7 @@ a {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 650px;
+  height: clamp(500px, 42vw, 620px);
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
