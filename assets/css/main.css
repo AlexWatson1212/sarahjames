@@ -1,3 +1,7 @@
+/* =========================================================
+   CSS PART 1 — BASE, TYPOGRAPHY, BUTTONS, HEADER/NAV
+   ========================================================= */
+
 :root {
   --bg: #f6f1ea;
   --bg-soft: #fffdf9;
@@ -37,6 +41,10 @@ body {
   font-size: 17px;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 img {
@@ -232,11 +240,7 @@ a {
   display: block;
 }
 
-/* Menu */
-
-.menu-toggle {
-  display: none;
-}
+/* Menu button */
 
 .menu-button {
   display: none;
@@ -275,6 +279,18 @@ a {
 
 .menu-button span::after {
   top: 6px;
+}
+
+.menu-open .menu-button span {
+  transform: rotate(45deg);
+}
+
+.menu-open .menu-button span::before {
+  transform: translateY(6px) rotate(90deg);
+}
+
+.menu-open .menu-button span::after {
+  opacity: 0;
 }
 
 /* Navigation */
@@ -330,6 +346,10 @@ a {
 .nav-cta:hover {
   background: var(--accent-dark);
 }
+/* =========================================================
+   CSS PART 2 — MAIN SECTIONS
+   ========================================================= */
+
 /* Hero */
 
 .hero {
@@ -726,6 +746,10 @@ a {
   color: var(--muted);
   font-size: 0.88rem;
 }
+/* =========================================================
+   CSS PART 3 — TABLET AND MOBILE
+   ========================================================= */
+
 /* Tablet */
 
 @media (max-width: 940px) {
@@ -838,10 +862,7 @@ a {
 
   .main-nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
     z-index: 600;
 
     width: 100vw;
@@ -867,6 +888,13 @@ a {
       opacity 0.25s ease,
       visibility 0.25s ease,
       transform 0.25s ease;
+  }
+
+  .menu-open .main-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   .main-nav a {
@@ -900,29 +928,6 @@ a {
     background: var(--accent);
     color: white !important;
     font-size: 0.9rem !important;
-  }
-
-  .menu-toggle:checked ~ .menu-button span {
-    transform: rotate(45deg);
-  }
-
-  .menu-toggle:checked ~ .menu-button span::before {
-    transform: translateY(6px) rotate(90deg);
-  }
-
-  .menu-toggle:checked ~ .menu-button span::after {
-    opacity: 0;
-  }
-
-  .menu-toggle:checked ~ .main-nav {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-
-  body:has(.menu-toggle:checked) {
-    overflow: hidden;
   }
 
   .hero {
