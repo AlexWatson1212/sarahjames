@@ -935,7 +935,7 @@ a {
   }
 
   .hero-grid {
-    gap: 34px;
+    gap: 24px;
   }
 
   .hero h1 {
@@ -1003,6 +1003,8 @@ a {
   }
 
   .about-photo {
+    max-width: 340px;
+    margin: 0 auto;
     aspect-ratio: 4 / 4.65;
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-soft);
@@ -1122,6 +1124,10 @@ a {
   .footer-inner {
     gap: 28px;
     padding: 64px 22px;
+  }
+
+  .footer-nav {
+    gap: 18px;
   }
 
   .footer-title {
